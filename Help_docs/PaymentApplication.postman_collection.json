@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "56aa1728-320d-4ebe-8160-d6aaec11b07c",
+		"name": "PaymentApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34460287"
+	},
+	"item": [
+		{
+			"name": "User-service",
+			"item": [
+				{
+					"name": "create_user1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sushmitha\",\r\n    \"email\":\"santhosmails@gmail.com\",\r\n    \"age\":19,\r\n    \"mobileNumber\":\"9876543210\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10001/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "10001",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_user2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sushmitha2\",\r\n    \"email\":\"sushuphotos140612@gmail.com\",\r\n    \"age\":19,\r\n    \"mobileNumber\":\"9976543210\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10000/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/user/profile_info",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "9876543210",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:10001/user/profile_info",
+							"host": [
+								"localhost"
+							],
+							"port": "10001",
+							"path": [
+								"user",
+								"profile_info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/user/9876543210",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "9876543210",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:10000/user/username/9876543210",
+							"host": [
+								"localhost"
+							],
+							"port": "10000",
+							"path": [
+								"user",
+								"username",
+								"9876543210"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wallet-service",
+			"item": [
+				{
+					"name": "localhost:8081/wallet/update?senderId=9876543210&receiverId=9976543210&amount=200",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10002/wallet/update?senderId=9876543210&receiverId=9976543210&amount=200",
+							"host": [
+								"localhost"
+							],
+							"port": "10002",
+							"path": [
+								"wallet",
+								"update"
+							],
+							"query": [
+								{
+									"key": "senderId",
+									"value": "9876543210"
+								},
+								{
+									"key": "receiverId",
+									"value": "9976543210"
+								},
+								{
+									"key": "amount",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction-service",
+			"item": [
+				{
+					"name": "localhost:10003/transaction/initiate",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "9976543210",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverId\":\"9876543210\",\r\n    \"amount\":1,\r\n    \"message\":\"food-bill\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:10003/transaction/initiate",
+							"host": [
+								"localhost"
+							],
+							"port": "10003",
+							"path": [
+								"transaction",
+								"initiate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
