@@ -58,11 +58,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:10000/user/create",
+							"raw": "localhost:10001/user/create",
 							"host": [
 								"localhost"
 							],
-							"port": "10000",
+							"port": "10001",
 							"path": [
 								"user",
 								"create"
@@ -149,7 +149,19 @@
 					"name": "localhost:8081/wallet/update?senderId=9876543210&receiverId=9976543210&amount=200",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "9876543210",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -163,7 +175,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:10002/wallet/update?senderId=9876543210&receiverId=9976543210&amount=200",
+							"raw": "localhost:10002/wallet/update?senderId=9876543210&receiverId=9976543210&amount=20",
 							"host": [
 								"localhost"
 							],
@@ -183,7 +195,7 @@
 								},
 								{
 									"key": "amount",
-									"value": "200"
+									"value": "20"
 								}
 							]
 						}
